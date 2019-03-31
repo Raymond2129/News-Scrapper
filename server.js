@@ -12,7 +12,7 @@ const express = require('express'),
 
 // set up express app
 // =============================================================
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 let app = express();
 
 app
