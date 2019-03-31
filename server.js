@@ -32,13 +32,11 @@ app
 // set mongoose to leverage promises
 mongoose.Promise = Promise;
 
-const dbURI = process.env.MONGODB_URI || "mongodb://localhost:27017/newsArticles";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// Database configuration with mongoose
-mongoose.set('useCreateIndex', true)
-mongoose.connect(dbURI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI);
 
-const db = mongoose.connection;
+//const db = mongoose.connection;
 
 // Show any mongoose errors
 db.on("error", function(error) {
