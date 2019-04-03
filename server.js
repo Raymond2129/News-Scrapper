@@ -8,12 +8,12 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       logger = require('morgan'),
       mongoose = require('mongoose'),
-      cheerio = require('cheerio'),
+      //cheerio = require('cheerio'),
       methodOverride = require('method-override');
 
 // set up express app
 // =============================================================
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 let app = express();
 
 app
