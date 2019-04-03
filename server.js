@@ -33,11 +33,9 @@ app
 // set mongoose to leverage promises
 mongoose.Promise = Promise;
 
-const dbURI = process.env.MONGODB_URI || "mongodb://heroku_gfv45lsj:59jhei20lks0ulpv8k2q1dkgj7@ds255005.mlab.com:55005/heroku_gfv45lsj";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_gfv45lsj:59jhei20lks0ulpv8k2q1dkgj7@ds255005.mlab.com:55005/heroku_gfv45lsj";
 
-// Database configuration with mongoose
-mongoose.set('useCreateIndex', true)
-mongoose.connect(dbURI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI);
 
 const db = mongoose.connection; 
 
