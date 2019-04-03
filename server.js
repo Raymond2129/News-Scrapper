@@ -8,11 +8,12 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       logger = require('morgan'),
       mongoose = require('mongoose'),
+      cheerio = require('cheerio'),
       methodOverride = require('method-override');
 
 // set up express app
 // =============================================================
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 let app = express();
 
 app
@@ -32,13 +33,13 @@ app
 // set mongoose to leverage promises
 mongoose.Promise = Promise;
 
-const dbURI = process.env.MONGODB_URI || "mongodb://localhost:27017/newsArticles";
+const dbURI = process.env.MONGODB_URI || "mongodb://heroku_gfv45lsj:59jhei20lks0ulpv8k2q1dkgj7@ds255005.mlab.com:55005/heroku_gfv45lsj";
 
 // Database configuration with mongoose
 mongoose.set('useCreateIndex', true)
 mongoose.connect(dbURI, { useNewUrlParser: true });
 
-const db = mongoose.connection;
+const db = mongoose.connection; 
 
 // Show any mongoose errors
 db.on("error", function(error) {
